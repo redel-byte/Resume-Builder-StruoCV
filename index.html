@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a2e0f1f4a8.js" crossorigin="anonymous"></script>
+    <script defer src="./assets/starter.js"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-green-500">
+    <main>
+        <!-- TItle and Progress bar -->
+        <header class="w-3.2 max-w-2xl">
+            <!-- Progress Bar Container -->
+            <div class="relative flex items-center justify-between">
+                <!-- Line background -->
+                <div class="absolute top-1/2 left-0 w-full h-1 bg-green-500 transform -translate-y-1/2"></div>
+                <!-- Active Line -->
+                <div id="progress-line"
+                    class="absolute top-1/2 left-0 h-1 bg-indigo-500 transform -translate-y-1/2 transition-all duration-500"
+                    style="width: 0%;"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div
+                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white transition-all duration-500">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <p class="mt-2 text-white text-sm">Personal</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div
+                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-green-300 text-green-800 transition-all duration-500">
+                        <i class="fa fa-file-alt"></i>
+                    </div>
+                    <p class="mt-2 text-white text-sm">Experiences</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center">
+                    <div
+                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-green-300 text-green-800 transition-all duration-500">
+                        <i class="fa fa-pencil-alt"></i>
+                    </div>
+                    <p class="mt-2 text-white text-sm">Template</p>
+                </div>
+            </div>
+        </header>
+        <div>
+            <div>
+                <div>
+                    <h2>Personal Details</h2>
+                </div>
+                <div>
+                    <p>Resume language</p>
+                </div>
+            </div>
+            <div>
+                <img src="" alt="photo personal">
+            </div>
+            <div>
+                <form>
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="El habib">
+
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name" name="first-name" placeholder="Ridouane">
+                </form>
+            </div>
+            <div>
+                <form>
+                    <label for="email">Email address</label>
+                    <input type="text" id="email" name="email" placeholder="Example@example.com">
+
+                    <label for="phone">Phone number</label>
+                    <input type="text" id="phone" name="phone" placeholder="2126-4588-4913">
+                </form>
+            </div>
+            <div>
+                <form>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address"
+                        placeholder="Ex: Hay touame biougra chtouka ait baha">
+                </form>
+            </div>
+            <div>
+                <form>
+                    <label for="zip-code">Zip code</label>
+                    <input type="text" id="zip-code" name="zip code" placeholder="">
+                </form>
+                <form>
+                    <label for="city-town">City/Town</label>
+                    <input type="text" id="city-town" name="city town" placeholder="e.g. San fransisco">
+                </form>
+            </div>
+            <div>
+                <button type="button">Additional-info</button>
+            </div>
+        </div>
+        <!-- <form>
+                <label for="first-name">First name*</label>
+                <input type="text" id="first-name" name="first-name" value="dahmed">
+
+                <label for="last-name">Last name*</label>
+                <input type="text" id="last-name" name="last-name" value="botfonast">
+
+                <label for="email">Email address*</label>
+                <input type="email" id="email" name="email" value="da7med@botfonast.com">
+
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" value="0712345678">
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" value="tigmi n dahmad botfonast ayad">
+
+                <label for="zip">Zip code</label>
+                <input type="text" id="zip" name="zip" value="1234">
+
+                <label for="city">City/Town</label>
+                <input type="text" id="city" name="city" value="ait lfonction">
+
+                <div class="additional-info">+ Additional information</div>
+            </form> -->
+
+    </main>
+    <footer>
+        <div class="flex justify-center mt-8 gap-4">
+            <button id="prev" class="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold">Previous</button>
+            <button id="next" class="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold">Next</button>
+        </div>
+        <div>
+            <p>By clicking "Next Step" you will begin creating your resume and you agree to our <span>general
+                    terms</span>and <span>privacy policy</span>.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
