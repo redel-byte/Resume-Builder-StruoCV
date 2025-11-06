@@ -2,142 +2,176 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Details Form</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a2e0f1f4a8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Maker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="./assets/starter.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    sm: "480px",
+                    md: "768px",
+                    lg: "976px",
+                    xl: "1440px",
+                },
+                extend: {
+                    colors: {
+                        P: "#E98654",
+                        brightP: "#FFB68A",
+                        brightPSupLight: "hsl(12,88%,95%)",
+                        brightgreen: "#B4F8C8",
+                        darkP: "#B46C47",
+                        veryDarkBlue: "hsl(233,12%,13%)",
+                        veryPaleP: "hsl(13,100%,96%)",
+                        veryLightP: "hsl(0,0%,98%)",
+                    },
+                },
+            },
+        };
+    </script>
 </head>
 
-<body class="flex items-center justify-center min-h-screen bg-green-500">
-    <main>
-        <!-- TItle and Progress bar -->
-        <header class="w-3.2 max-w-2xl">
-            <!-- Progress Bar Container -->
-            <div class="relative flex items-center justify-between">
-                <!-- Line background -->
-                <div class="absolute top-1/2 left-0 w-full h-1 bg-green-500 transform -translate-y-1/2"></div>
-                <!-- Active Line -->
+<body class="bg-gray-100 text-gray-800">
+
+    <main class="max-w-4xl mx-auto p-6">
+        <!-- Progress Header -->
+        <h2 class="text-4xl text-center font-semibold mb-6">Personal Details</h2>
+        <header class="flex justify-center py-6 rounded-md mb-8">
+            <div class="relative flex items-center justify-between w-3/4">
+
+                <!-- Line -->
+                <div class="my-[-2%]  absolute top-1/2 left-1  w-[99%] h-2 bg-green-300 translate-y-[-50%]"></div>
                 <div id="progress-line"
-                    class="absolute top-1/2 left-0 h-1 bg-indigo-500 transform -translate-y-1/2 transition-all duration-500"
-                    style="width: 0%;"></div>
+                    class="absolute top-1/2 my-[-2%] left-1 h-2 bg-indigo-600 w-0 translate-y-[-50%] transition-all duration-500 w-[99%]">
+                </div>
 
                 <!-- Step 1 -->
-                <div class="relative z-10 flex flex-col items-center">
+                <div class="relative z-10 flex flex-col items-center ">
                     <div
-                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 text-white transition-all duration-500">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-indigo-600 text-white transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
                         <i class="fa fa-user"></i>
                     </div>
-                    <p class="mt-2 text-white text-sm">Personal</p>
+                    <p class="text-black mt-1 text-sm ">Personal</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="relative z-10 flex flex-col items-center">
                     <div
-                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-green-300 text-green-800 transition-all duration-500">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
                         <i class="fa fa-file-alt"></i>
                     </div>
-                    <p class="mt-2 text-white text-sm">Experiences</p>
+                    <p class="text-black mt-1 text-sm">Experiences</p>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="relative z-10 flex flex-col items-center">
+                <div class="relative z-10 flex flex-col items-center left-4">
                     <div
-                        class="step w-10 h-10 flex items-center justify-center rounded-full bg-green-300 text-green-800 transition-all duration-500">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 tranfrom transitoin duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
                         <i class="fa fa-pencil-alt"></i>
                     </div>
-                    <p class="mt-2 text-white text-sm">Template</p>
+                    <p class="text-black mt-1 text-sm">Template</p>
                 </div>
             </div>
         </header>
-        <div>
-            <div>
+
+        <!-- CONTENT -->
+        <section class="bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Left Info -->
+                <div class="flex flex-col gap-4">
+
+                    <!-- Language -->
+                    <div class="flex bg-blue-500  justify-between">
+                        <div>
+                            <h2 class="text-xl font-semibold my-6 mx-auto">Personal Details</h2>
+                        </div>
+                        <div>
+                            <label class="font-medium mb-6">Resume Language</p>
+                                <select class="w-3/4-2 border p-1 rounded-md">
+                                    <option>English</option>
+                                    <option>Arabic</option>
+                                    <option>French</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <!-- First + Last Name -->
+                    <div>
+                        <label class="block font-medium mb-1">First Name</label>
+                        <input type="text" placeholder="El Habib" class="w-full p-2 border rounded-md">
+                    </div>
+
+                    <div>
+                        <label class="block font-medium mb-1">Last Name</label>
+                        <input type="text" placeholder="Ridouane" class="w-full p-2 border rounded-md">
+                    </div>
+
+                    <!-- Email + Phone -->
+                    <div>
+                        <label class="block font-medium mb-1">Email Address</label>
+                        <input type="text" placeholder="example@example.com" class="w-full p-2 border rounded-md">
+                    </div>
+
+                    <div>
+                        <label class="block font-medium mb-1">Phone Number</label>
+                        <input type="text" placeholder="212-6-4588-4913" class="w-full p-2 border rounded-md">
+                    </div>
+
+                </div>
+
+                <!-- Right: Profile Image -->
+                <div class="flex justify-center items-center">
+                    <div class="w-40 h-40 rounded-full bg-gray-200 flex justify-center items-center border">
+                        <span class="text-gray-500 text-sm">Upload Photo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mt-6">
+                <label class="block font-medium mb-1">Address</label>
+                <input type="text" placeholder="Hay Touame Biougra..." class="w-full p-2 border rounded-md">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <div>
-                    <h2>Personal Details</h2>
+                    <label class="block font-medium mb-1">Zip Code</label>
+                    <input type="text" class="w-full p-2 border rounded-md">
                 </div>
                 <div>
-                    <p>Resume language</p>
+                    <label class="block font-medium mb-1">City / Town</label>
+                    <input type="text" class="w-full p-2 border rounded-md" placeholder="e.g. San Francisco">
                 </div>
             </div>
-            <div>
-                <img src="" alt="photo personal">
+
+            <div class="mt-6">
+                <button type="button" class="border px-4 py-2 rounded-md text-sm text-blue-600 hover:bg-blue-50">
+                    Additional Info
+                </button>
             </div>
-            <div>
-                <form>
-                    <label for="first-name">First name</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="El habib">
 
-                    <label for="last-name">Last name</label>
-                    <input type="text" id="last-name" name="first-name" placeholder="Ridouane">
-                </form>
-            </div>
-            <div>
-                <form>
-                    <label for="email">Email address</label>
-                    <input type="text" id="email" name="email" placeholder="Example@example.com">
-
-                    <label for="phone">Phone number</label>
-                    <input type="text" id="phone" name="phone" placeholder="2126-4588-4913">
-                </form>
-            </div>
-            <div>
-                <form>
-                    <label for="address">Address</label>
-                    <input type="text" id="address" name="address"
-                        placeholder="Ex: Hay touame biougra chtouka ait baha">
-                </form>
-            </div>
-            <div>
-                <form>
-                    <label for="zip-code">Zip code</label>
-                    <input type="text" id="zip-code" name="zip code" placeholder="">
-                </form>
-                <form>
-                    <label for="city-town">City/Town</label>
-                    <input type="text" id="city-town" name="city town" placeholder="e.g. San fransisco">
-                </form>
-            </div>
-            <div>
-                <button type="button">Additional-info</button>
-            </div>
-        </div>
-        <!-- <form>
-                <label for="first-name">First name*</label>
-                <input type="text" id="first-name" name="first-name" value="dahmed">
-
-                <label for="last-name">Last name*</label>
-                <input type="text" id="last-name" name="last-name" value="botfonast">
-
-                <label for="email">Email address*</label>
-                <input type="email" id="email" name="email" value="da7med@botfonast.com">
-
-                <label for="phone">Phone number</label>
-                <input type="tel" id="phone" name="phone" value="0712345678">
-
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" value="tigmi n dahmad botfonast ayad">
-
-                <label for="zip">Zip code</label>
-                <input type="text" id="zip" name="zip" value="1234">
-
-                <label for="city">City/Town</label>
-                <input type="text" id="city" name="city" value="ait lfonction">
-
-                <div class="additional-info">+ Additional information</div>
-            </form> -->
+        </section>
 
     </main>
-    <footer>
-        <div class="flex justify-center mt-8 gap-4">
-            <button id="prev" class="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold">Previous</button>
-            <button id="next" class="px-4 py-2 bg-white text-green-700 rounded-lg font-semibold">Next</button>
+
+    <footer class="text-center mt-8">
+        <div class="flex justify-center gap-4">
+            <button id="prev" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md">Previous</button>
+            <button id="next" class="px-6 py-2 bg-blue-600 text-white rounded-md">Next</button>
         </div>
-        <div>
-            <p>By clicking "Next Step" you will begin creating your resume and you agree to our <span>general
-                    terms</span>and <span>privacy policy</span>.</p>
-        </div>
+
+        <p class="text-sm text-gray-600 mt-3 max-w-md mx-auto">
+            By clicking "Next Step" you agree to our <span class="text-blue-600">Terms</span> &
+            <span class="text-blue-600">Privacy Policy</span>.
+        </p>
     </footer>
+
 </body>
 
 </html>
