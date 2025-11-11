@@ -153,4 +153,4 @@ No page reload required — everything updates dynamically with JavaScript.
 ---
 
 ## 🪪 License
-This project is open-source and available under the [MIT License](Da7med).
+This project is open-source and available under the [Da7med License].
