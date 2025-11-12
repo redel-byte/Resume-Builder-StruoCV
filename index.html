@@ -7,7 +7,10 @@
     <title>CV Maker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="./assets/starter.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 
     <script>
         tailwind.config = {
@@ -24,18 +27,20 @@
                         brightP: "#FFB68A",
                         brightPSupLight: "hsl(12,88%,95%)",
                         brightgreen: "#B4F8C8",
-                        darkP: "#B46C47",
-                        veryDarkBlue: "hsl(233,12%,13%)",
+                        Pdarck: "#B46C47",
                         veryPaleP: "hsl(13,100%,96%)",
                         veryLightP: "hsl(0,0%,98%)",
                     },
+                    //     fontFamily: {
+                    //         sans: ['Inter', 'system-ui', 'sans-serif'],
+                    //     },
                 },
             },
-        };
+        }
     </script>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-veryPaleP text-gray-800">
 
     <main class="max-w-4xl mx-auto p-6">
         <!-- Progress Header -->
@@ -44,15 +49,15 @@
             <div class="relative flex items-center justify-between w-3/4">
 
                 <!-- Line -->
-                <div class="my-[-2%]  absolute top-1/2 left-1  w-[99%] h-2 bg-green-300 translate-y-[-50%]"></div>
+                <div class="my-[-2%]  absolute top-1/2 left-1  w-[99%] h-2 bg-brightgreen translate-y-[-50%]"></div>
                 <div id="progress-line"
-                    class="absolute top-1/2 my-[-2%] left-1 h-2 bg-indigo-600 w-0 translate-y-[-50%] transition-all duration-500 w-[99%]">
+                    class="absolute top-1/2 my-[-2%] left-1 h-2 bg-P  translate-y-[-50%] transition-all duration-500 w-0">
                 </div>
 
                 <!-- Step 1 -->
                 <div class="relative z-10 flex flex-col items-center ">
                     <div
-                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-indigo-600 text-white transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-P text-white transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-Pdarck">
                         <i class="fa fa-user"></i>
                     </div>
                     <p class="text-black mt-1 text-sm ">Personal</p>
@@ -61,7 +66,7 @@
                 <!-- Step 2 -->
                 <div class="relative z-10 flex flex-col items-center">
                     <div
-                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-Pdarck">
                         <i class="fa fa-file-alt"></i>
                     </div>
                     <p class="text-black mt-1 text-sm">Experiences</p>
@@ -70,7 +75,7 @@
                 <!-- Step 3 -->
                 <div class="relative z-10 flex flex-col items-center left-4">
                     <div
-                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 tranfrom transitoin duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-300">
+                        class="step w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 tranfrom transitiojn duration-300 hover:scale-110 hover:shadow-lg hover:shadow-Pdarck">
                         <i class="fa fa-pencil-alt"></i>
                     </div>
                     <p class="text-black mt-1 text-sm">Template</p>
@@ -79,83 +84,207 @@
         </header>
 
         <!-- CONTENT -->
-        <section class="bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+        <section id="subsection">
+            <section id="thisSection" class="bg-veryLightP p-6 rounded-3xl shadow-lg shadow-Pdarck">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <!-- Left Info -->
-                <div class="flex flex-col gap-4">
+                    <!-- Left Info -->
+                    <div class="flex flex-col gap-4">
 
-                    <!-- Language -->
-                    <div class="flex bg-blue-500  justify-between">
-                        <div>
-                            <h2 class="text-xl font-semibold my-6 mx-auto">Personal Details</h2>
-                        </div>
-                        <div>
-                            <label class="font-medium mb-6">Resume Language</p>
-                                <select class="w-3/4-2 border p-1 rounded-md">
-                                    <option>English</option>
-                                    <option>Arabic</option>
-                                    <option>French</option>
+                        <!-- Language -->
+                        <div class="flex justify-between">
+                            <div>
+                                <h2 class="text-xl font-semibold my-6 mx-auto">Personal Details</h2>
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="resume-language" class="font-medium mb-4">Resume Language</label>
+                                <select id="resume-language" class="w-3/4-2 border p-1 rounded-md">
+                                    <option value="en">English</option>
+                                    <option value="ar">Arabic</option>
+                                    <option value="fr">French</option>
                                 </select>
+                            </div>
+                        </div>
+
+                        <!-- First + Last Name -->
+                        <div>
+                            <label for="fname" class="block font-medium mb-1">First Name</label>
+                            <input id="fname" type="text" placeholder="El Habib" class="w-full p-2 border rounded-md">
+                        </div>
+                        <span class="fname__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                            Invalid Name form</span>
+                        <div>
+                            <label for="lname" class="block font-medium mb-1">Last Name</label>
+                            <input id="lname" type="text" placeholder="Ridouane" class="w-full p-2 border rounded-md">
+                        </div>
+                        <span class="lname__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                            Invalid Name form</span>
+
+                        <!-- Email + Phone -->
+                        <div>
+                            <label for="email" class="block font-medium mb-1">Email Address</label>
+                            <input id="email" type="text" placeholder="example@example.com"
+                                class="w-full p-2 border rounded-md">
+                        </div>
+                        <span class="email__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                            Invalid Email</span>
+                        <div>
+                            <label for="phone" class="block font-medium mb-1">Phone Number</label>
+                            <input id="phone" type="text" placeholder="212-74588-4913"
+                                class="w-full p-2 border rounded-md">
+                        </div>
+                        <span class="phone__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                            Invalid Phone Number</span>
+                    </div>
+
+                    <!-- Right: Profile Image -->
+                    <div class="flex justify-center items-center flex-col">
+                        <div class="w-40 h-40 rounded-full bg-gray-200 flex justify-center items-center border">
+                            <!-- <span class="text-gray-500 text-sm">Upload Photo</span>
+                        <input id="photo" name="photo" type="file" accept="image/*" class="mt-1 block w-full hidden" /> -->
+                            <div>
+                                <label for="photo"
+                                    class="w-40 h-40 rounded-full border border-gray-300 bg-gray-100 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-200 transition">
+                                    <svg class="w-10 h-10 text-gray-500 mb-2" fill="none" stroke="currentColor"
+                                        stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 5v14M5 12h14" />
+                                    </svg>
+                                    <span class="text-gray-600 text-sm">Upload Photo</span>
+                                </label>
+
+                                <input id="photo" name="photo" type="file" accept=".png" class="hidden" />
+                            </div>
+                            <div id="photo__holder" class="hidden">
+                                <img src="" alt="photo Personal">
+                            </div>
+                        </div>
+                        <span class="image__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                            Image
+                            is Required</span>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="mt-6">
+                    <label for="address" class="block font-medium mb-1">Address</label>
+                    <input id="address" type="text" placeholder="Hay Touame Biougra..."
+                        class="w-full p-2 border rounded-md">
+                </div>
+                <span class="address__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>
+                    Address is
+                    Required</span>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div>
+                        <label for="zip" class="block font-medium mb-1">Zip Code</label>
+                        <input id="zip" type="text" class="w-full p-2 border rounded-md">
+                    </div>
+                    <div>
+                        <label for="city" class="block font-medium mb-1">City / Town</label>
+                        <input id="city" type="text" class="w-full p-2 border rounded-md"
+                            placeholder="e.g. San Francisco">
+                        <span class="city__error mx-1 hidden error" style="color: red;"><i
+                                class="fa-solid fa-up-long"></i>
+                            this field is Required</span>
+                    </div>
+                </div>
+
+
+                <!-- button of additional info -->
+                <div id="additionalinfo__button--div" class="mt-6">
+                    <button id="additionalinfo--btn" type="button"
+                        class="border px-4 mx-[40%] py-2 rounded-md text-sm text-blue-600 transform transition duration-300 hover:scale-110 hover:bg-blue-50">
+                        <i class="fa-solid fa-plus"></i> Additional Info
+                    </button>
+                </div>
+                <!-- aditional info div -->
+
+                <!-- rihgt col -->
+                <div id="additionalinfo--div" class="mt-9 hidden">
+                    <div class="h-[24em]">
+                        <div class="flex place-content-around">
+                            <div class="space-y-9">
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="birth" class="font-bold">Date of birth</label>
+                                        <input id="birth" class="w-[100%] border p-2 rounded-2xl text-center font"
+                                            type="date">
+                                    </form>
+                                    <span class="birth__error mx-1 hidden error" style="color: red;"><i
+                                            class="fa-solid fa-up-long"> this field is required</i>
+                                </div>
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="licence" class="font-bold">Driving licence</label>
+                                        <input id="licence" type="text" class="border p-2 w-[100%] rounded-2xl"
+                                            placeholder="A,B">
+                                    </form>
+                                    <span class="licence__error mx-1 hidden error" style="color: red;"><i
+                                            class="fa-solid fa-up-long"> This field is required</i>
+                                </div>
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="nationality" class="font-bold">Nationality</label>
+                                        <input type="text" id="nationality" class="border w-[100%] p-2 rounded-2xl"
+                                            placeholder="Morrocan">
+                                    </form>
+                                    <span class="nationality__error mx-1 error hidden" style="color: red;"><i
+                                            class="fa-solid fa-up-long"></i> This field is required
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- left col -->
+
+                            <div class="space-y-9">
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="place__birth" class="font-bold">Place of birth</label>
+                                        <input id="place__birth" class="w-[100%] border p-2 rounded-2xl font"
+                                            type="text" placeholder="Inzegane">
+                                    </form>
+                                    <span class="place__error mx-1 hidden error" style="color: red;"><i
+                                            class="fa-solid fa-up-long"></i> This field is required
+                                    </span>
+                                </div>
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="gender" class="font-bold">Gender</label>
+                                        <input id="gender" type="text" class="border p-2 w-[100%] rounded-2xl"
+                                            placeholder="Male/Female">
+                                    </form>
+                                    <span class="gender__error mx-1 hidden error" style="color: red;"><i
+                                            class="fa-solid fa-up-long"></i> This field is required
+                                    </span>
+                                </div>
+                                <div>
+                                    <form class="flex flex-col space-y-2">
+                                        <label for="linkedln" class="font-bold">Linkedln</label>
+                                        <input type="text" id="linkedln" class="border w-[100%] p-2 rounded-2xl"
+                                            placeholder="https://linkedin.com/in/YourName">
+                                    </form>
+                                    <span class="linkedln__error mx-1 hidden error" style="color: red;"><i
+                                            class="fa-solid fa-up-long"></i> This field is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div id="additionalinfocancel__button--div" class="mt-6">
+                            <button id="additionalinfo__button__cancel" type="button"
+                                class="border px-4 mx-[40%] py-2 rounded-md text-sm text-blue-600 tranform transition duration-300 hover:scale-110 hover:bg-blue-50">
+                                <i class="fa-solid fa-minus"></i> Additional Info
+                            </button>
+                        </div>
+                        <div>
+
                         </div>
                     </div>
-
-                    <!-- First + Last Name -->
-                    <div>
-                        <label class="block font-medium mb-1">First Name</label>
-                        <input type="text" placeholder="El Habib" class="w-full p-2 border rounded-md">
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Last Name</label>
-                        <input type="text" placeholder="Ridouane" class="w-full p-2 border rounded-md">
-                    </div>
-
-                    <!-- Email + Phone -->
-                    <div>
-                        <label class="block font-medium mb-1">Email Address</label>
-                        <input type="text" placeholder="example@example.com" class="w-full p-2 border rounded-md">
-                    </div>
-
-                    <div>
-                        <label class="block font-medium mb-1">Phone Number</label>
-                        <input type="text" placeholder="212-6-4588-4913" class="w-full p-2 border rounded-md">
-                    </div>
-
                 </div>
-
-                <!-- Right: Profile Image -->
-                <div class="flex justify-center items-center">
-                    <div class="w-40 h-40 rounded-full bg-gray-200 flex justify-center items-center border">
-                        <span class="text-gray-500 text-sm">Upload Photo</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Address -->
-            <div class="mt-6">
-                <label class="block font-medium mb-1">Address</label>
-                <input type="text" placeholder="Hay Touame Biougra..." class="w-full p-2 border rounded-md">
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                <div>
-                    <label class="block font-medium mb-1">Zip Code</label>
-                    <input type="text" class="w-full p-2 border rounded-md">
-                </div>
-                <div>
-                    <label class="block font-medium mb-1">City / Town</label>
-                    <input type="text" class="w-full p-2 border rounded-md" placeholder="e.g. San Francisco">
-                </div>
-            </div>
-
-            <div class="mt-6">
-                <button type="button" class="border px-4 py-2 rounded-md text-sm text-blue-600 hover:bg-blue-50">
-                    Additional Info
-                </button>
-            </div>
-
+            </section>
         </section>
 
     </main>
@@ -163,15 +292,14 @@
     <footer class="text-center mt-8">
         <div class="flex justify-center gap-4">
             <button id="prev" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md">Previous</button>
-            <button id="next" class="px-6 py-2 bg-blue-600 text-white rounded-md">Next</button>
+            <button id="next" class="px-6 py-2 bg-P shadow-lg rounded-md">Next</button>
         </div>
 
-        <p class="text-sm text-gray-600 mt-3 max-w-md mx-auto">
+        <p class="text-sm text-gray-600 mt-3 max-w-md mx-auto font-bold">
             By clicking "Next Step" you agree to our <span class="text-blue-600">Terms</span> &
             <span class="text-blue-600">Privacy Policy</span>.
         </p>
     </footer>
-
 </body>
 
 </html>
