@@ -1,0 +1,442 @@
+<!-- Resume Objective -->
+
+<div id="description" class="mt-6 bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+    <!--header-->
+
+    <div id="resume__object--div" class="border-b pd-3 mb-6">
+        <button id="resume__object--btn" class="text-xl font-semibold flex items-center gap-2 mb-3 hover:text-P"><i
+                class="fa-solid fa-user "></i> Resume
+            objective</button>
+    </div>
+    <!--description-->
+    <div id="resume--detail" class="hidden">
+        <div id="editor1" class="h-[10em]"></div>
+        <button id="save__resume--btn" type="button"
+            class="rounded-full p-2 mx-[45%] mt-1 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-50">
+            <i class="fa-solid fa-floppy-disk"></i> Save
+        </button>
+        <p class="save__message text-center mt-3 text-green-500"></p>
+    </div>
+</div>
+
+
+<!-- Experience section -->
+
+
+<div id="work__experience" class="mt-6 bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3 mb-6">
+        <button id="experience__detail--btn" class="text-xl font-semibold flex items-center gap-2 hover:text-P">
+            <i class="fa-solid fa-briefcase"></i>
+            Work experience
+        </button>
+    </div>
+
+    <!-- Form -->
+    <div id="experience__detail--div" class="hidden">
+        <form class="space-y-5">
+
+            <!-- Job + City -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="job__title" class="text-sm">Job Title</label>
+                    <input id="job__title" type="text" class="w-full border rounded-md px-3 py-2 mt-1" placeholder="e.g. Sales Manager">
+                </div>
+                <div>
+                    <label for="city__town" class="text-sm">City/Town</label>
+                    <input id="city__town" type="text" class="w-full border rounded-md px-3 py-2 mt-1" placeholder="e.g. San Francisco">
+                </div>
+            </div>
+
+            <!-- Employer -->
+            <div>
+                <label for="employer" class="text-sm">Employer</label>
+                <input id="employer" type="text" class="w-full border rounded-md px-3 py-2 mt-1" placeholder="e.g. PwC">
+            </div>
+
+            <!-- Dates -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="text-sm block mb-1">Start Date</label>
+                    <div class="flex gap-3">
+                        <select id="start__month" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select id="start__year" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-sm block mb-1">End Date</label>
+                    <div class="flex gap-3">
+                        <select id="end__month" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select id="end__year" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div>
+                <label class="text-sm mb-1 block">Description</label>
+                <div>
+                    <div id="editor2">
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="flex justify-between items-center pt-4">
+                </div>
+                <button id="save__experience--btn" type="button"
+                    class="rounded-full p-2 mx-[45%] mt-1 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-50">
+                    <i class="fa-solid fa-floppy-disk"></i> Save
+                </button>
+                <p class="save__message text-center mt-3 text-green-500"></p>
+            </div>
+        </form>
+
+        <!-- Add new -->
+        <button
+            class="w-full mt-6 py-3 bg-gray-100 hover:bg-gray-200 border rounded-md text-center flex justify-center items-center gap-2">
+            <span>+</span> Add another work experience
+        </button>
+    </div>
+</div>
+
+
+
+<!--education-->
+
+
+
+
+<div id="education" class="mt-6 bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3 mb-6">
+        <button id="education__detail--btn" class="text-xl font-semibold hover:text-P flex items-center gap-2">
+            <i class="fa-solid fa-user-graduate"></i>
+            Education and Qualifications
+        </button>
+    </div>
+    <div id="education__detail--div" class="hidden">
+        <!-- Form -->
+        <form class="space-y-5">
+
+            <!-- Job + City -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="degree" class="text-sm">Degree</label>
+                    <input id="degree" type="text" class="w-full border rounded-md px-3 py-2 mt-1"
+                        placeholder="e.g Bachelor of Science">
+                </div>
+                <div>
+                    <label for="city__education" class="text-sm">City/Town</label>
+                    <input id="city__education" type="text" class="w-full border rounded-md px-3 py-2 mt-1" placeholder="e.g. San Francisco">
+                </div>
+            </div>
+
+            <!-- Employer -->
+            <div>
+                <label for="school" class="text-sm">School</label>
+                <input id="school" type="text" class="w-full border rounded-md px-3 py-2 mt-1"
+                    placeholder="e.g. New York University">
+            </div>
+
+            Dates
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label for="start__month--education" class="text-sm block mb-1">Start Date</label>
+                    <div class="flex gap-3">
+                        <select id="start__month--education" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select id="start__year--education" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="end__month--education" class="text-sm block mb-1">End Date</label>
+                    <div class="flex gap-3">
+                        <select id="end__month--education" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <select id="end__year--education" class="border rounded-md px-3 py-2 w-1/2">
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Description -->
+
+
+            <div>
+                <label class="text-sm mb-1 block">Description</label>
+                <div>
+                    <div id="editor3">
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="flex justify-between items-center pt-4">
+                </div>
+                <button id="save__education--btn" type="button"
+                    class="rounded-full p-2 mx-[45%] mt-1 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-50">
+                    <i class="fa-solid fa-floppy-disk"></i> Save
+                </button>
+                <p class="text-center mt-3 text-green-500 save__message"></p>
+            </div>
+        </form>
+
+        <!-- Add new -->
+        <button
+            class="w-full mt-6 py-3 bg-gray-100 hover:bg-gray-200 border rounded-md text-center flex justify-center items-center gap-2">
+            <span>+</span> Add another work experience
+        </button>
+    </div>
+</div>
+
+
+<!-- Interest -->
+
+
+
+<div id="education" class="mt-6 bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3 mb-6">
+        <button id="interest__detail--btn" class="text-xl font-semibold flex items-center hover:text-P gap-2">
+            <i class="fa-solid fa-palette"></i>
+            Interests
+        </button>
+    </div>
+    <div id="interest__detail--div" class="hidden">
+        <!-- Form -->
+        <form class="space-y-4">
+
+            <!-- Hobby Input -->
+            <div>
+                <label for="hobby" class="text-sm">Hobby</label>
+                <input id="hobby" type="text" class="w-full border rounded-md px-3 py-2 mt-1" placeholder="e.g. Hiking">
+            </div>
+
+            <!-- Buttons -->
+            <div>
+                <button id="save__interest--btn" type="button"
+                    class="rounded-full p-2 mx-[45%] mt-1 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-50">
+                    <i class="fa-solid fa-floppy-disk"></i> Save
+                </button>
+                <p class="text-center mt-3 text-green-500 save__message"></p>
+            </div>
+        </form>
+
+        <!-- Add new -->
+        <button
+            class="w-full mt-6 py-3 bg-gray-100 hover:bg-gray-200 border rounded-md text-center flex justify-center items-center gap-2">
+            <span>+</span> Add another hobby
+        </button>
+    </div>
+</div>
+
+
+<!-- skills -->
+
+
+<div id="education" class="mt-6 bg-white p-6 rounded-3xl shadow-lg shadow-purple-300">
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-3 mb-6">
+        <button id="skill__detail--btn" class="text-xl font-semibold flex items-center gap-2 hover:text-P">
+            <i class="fa-solid fa-mouse-pointer"></i>
+            Skills
+        </button>
+    </div>
+    <div id="skills__detail--div" class="hidden">
+        <!-- Form -->
+        <form class="space-y-5">
+
+            <!-- Skill + Level -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="skills" class="text-sm">Skill</label>
+                    <input id="skills" type="text" class="w-full border rounded-md px-3 py-2 mt-1"
+                        placeholder="e.g. Microsoft Word">
+                </div>
+
+                <div>
+                    <label for="level" class="text-sm">Level</label>
+                    <select id="level" class="w-full border rounded-md px-3 py-2 mt-1">
+                        <option disabled selected>Select level</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                        <option>Expert</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div>
+                <button id="save__skills--btn" type="button"
+                    class="rounded-full p-2 mx-[45%] mt-1 transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-blue-50">
+                    <i class="fa-solid fa-floppy-disk"></i> Save
+                </button>
+                <p class="text-center mt-3 text-green-500 save__message"></p>
+            </div>
+        </form>
+        <!-- Add new -->
+        <button
+            class="w-full mt-6 py-3 bg-gray-100 hover:bg-gray-200 border rounded-md text-center flex justify-center items-center gap-2">
+            <span>+</span> Add another hobby
+        </button>
+    </div>
+</div>
