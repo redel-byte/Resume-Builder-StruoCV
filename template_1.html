@@ -1,0 +1,71 @@
+<section id="cv-template" class="hidden p-6 bg-gray-100 min-h-screen">
+  <div id="cv-content" class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 text-gray-800">
+    <div class="flex items-center justify-center gap-4 mb-4">
+      <img id="cv-photo" src="./assets/profile-placeholder.png" alt="Profile"
+        class="w-24 h-24 rounded-full object-cover" style="display:none">
+      <div>
+        <h1 class="text-3xl font-bold text-center mb-2" id="cv-name">Full Name</h1>
+        <p class="text-center text-gray-500" id="cv-title">Professional Summary</p>
+      </div>
+    </div>
+
+    <div class="border-t pt-4 space-y-6">
+      <!-- Personal Information -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Personal Information</h2>
+        <p><strong>Email:</strong> <span id="cv-email"></span></p>
+        <p><strong>Phone:</strong> <span id="cv-phone"></span></p>
+        <p><strong>Address:</strong> <span id="cv-address"></span></p>
+        <p><strong>City:</strong> <span id="cv-city"></span></p>
+        <p><strong>Nationality:</strong> <span id="cv-nationality"></span></p>
+        <!-- Additional info (hidden unless present) -->
+        <div id="cv-additional" style="display:none; margin-top:8px;">
+          <p><strong>Date of Birth:</strong> <span id="cv-birth"></span></p>
+          <p><strong>Driving licence:</strong> <span id="cv-licence"></span></p>
+          <p><strong>Place of birth:</strong> <span id="cv-placeOfBirth"></span></p>
+          <p><strong>Gender:</strong> <span id="cv-gender"></span></p>
+          <p><strong>LinkedIn:</strong> <span id="cv-linkedln"></span></p>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Work Experience</h2>
+        <p><strong>Job Title:</strong> <span id="cv-jobTitle"></span></p>
+        <p><strong>Employer:</strong> <span id="cv-employer"></span></p>
+        <p><strong>Period:</strong> <span id="cv-period"></span></p>
+        <p><strong>Description:</strong></p>
+        <p id="cv-experience-desc" class="text-gray-600"></p>
+      </div>
+
+      <!-- Education -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Education</h2>
+        <p><strong>Degree:</strong> <span id="cv-degree"></span></p>
+        <p><strong>School:</strong> <span id="cv-school"></span></p>
+        <p><strong>Period:</strong> <span id="cv-edu-period"></span></p>
+        <p><strong>Description:</strong></p>
+        <p id="cv-edu-desc" class="text-gray-600"></p>
+      </div>
+
+      <!-- Interests -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Interests</h2>
+        <p id="cv-interests" class="text-gray-600"></p>
+      </div>
+
+      <!-- Skills -->
+      <div>
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Skills</h2>
+        <p id="cv-skills" class="text-gray-600"></p>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+<div class="text-center mt-6">
+  <button id="downloadPDF" class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Download
+    PDF</button>
+</div>
+<!-- JavaScript moved to assets/template_1.js -->

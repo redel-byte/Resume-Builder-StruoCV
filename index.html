@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Maker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script defer src="./assets/starter.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Use html2canvas + jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script defer src="./assets/resume_unified_storage_step_persist.js"></script>
+
 
 
     <script>
@@ -289,7 +293,7 @@
 
     </main>
 
-    <footer class="text-center mt-8">
+    <footer id="navigate--btn" class="text-center mt-8">
         <div class="flex justify-center gap-4">
             <button id="prev" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md">Previous</button>
             <button id="next" class="px-6 py-2 bg-P shadow-lg rounded-md">Next</button>
