@@ -148,7 +148,7 @@
                             <!-- <span class="text-gray-500 text-sm">Upload Photo</span>
                         <input id="photo" name="photo" type="file" accept="image/*" class="mt-1 block w-full hidden" /> -->
                             <div>
-                                <label for="photo"
+                                <label id="photo__label" for="photo"
                                     class="w-40 h-40 rounded-full border border-gray-300 bg-gray-100 flex flex-col justify-center items-center cursor-pointer hover:bg-gray-200 transition">
                                     <svg class="w-10 h-10 text-gray-500 mb-2" fill="none" stroke="currentColor"
                                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
@@ -160,8 +160,8 @@
 
                                 <input id="photo" name="photo" type="file" accept=".png" class="hidden" />
                             </div>
-                            <div id="photo__holder" class="hidden">
-                                <img src="" alt="photo Personal">
+                            <div id="photo__div" class="hidden">
+                                <img id="previwphoto" src="" alt="photo Personal">
                             </div>
                         </div>
                         <span class="image__error hidden error" style="color: red;"><i class="fa-solid fa-up-long"></i>

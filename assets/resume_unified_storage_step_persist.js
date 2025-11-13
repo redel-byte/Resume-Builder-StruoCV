@@ -256,6 +256,26 @@ function loadCVTemplate() {
 
 
 
+const photoInput = document.getElementById('photo');
+const divImage = document.getElementById('photo__div');
+const previwphoto = document.getElementById("previwphoto")
+const photoLabel= document.getElementById('photo__label');
+
+photoInput.addEventListener('change', function () {
+  const file = this.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      previwphoto.src = e.target.result;
+      divImage.classList.remove('hidden');
+      photoLabel.classList.add('hidden');
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
 
 
 //                     downloadBtn.addEventListener("click", () => {
