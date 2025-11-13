@@ -158,101 +158,102 @@ function loadCVTemplate() {
 }
 
 function loadCVTemplate() {
-    fetch("template_1.html").then(response => response.text()).then(html => {
-        const container = document.getElementById("subsection");
+    fetch("template_1.html")
+        .then(response => response.text())
+        .then(html => {
+            const container = document.getElementById("subsection");
 
-        // Parse HTML to separate scripts from content
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const scripts = doc.querySelectorAll('script');
-        let scriptContent = '';
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const scripts = doc.querySelectorAll("script");
+            let scriptContent = "";
 
-        // Extract script content
-        scripts.forEach(script => {
-            if (!script.src) {
-                scriptContent += script.textContent + '\n';
-            } else {
-                // Load external script (html2pdf)
-                const externalScript = document.createElement('script');
-                externalScript.src = script.src;
-                document.body.appendChild(externalScript);
-            }
-        });
+            scripts.forEach(script => {
+                if (!script.src) {
+                    scriptContent += script.textContent + "\n";
+                } else {
+                    const s = document.createElement("script");
+                    s.src = script.src;
+                    document.body.appendChild(s);
+                }
+            });
 
-        // Remove scripts from doc before inserting
-        scripts.forEach(s => s.remove());
+            scripts.forEach(s => s.remove());
+            container.innerHTML = doc.body.innerHTML;
 
-        // Insert HTML content into container
-        container.innerHTML = doc.body.innerHTML;
+            setTimeout(() => {
+                const cvTemplate = document.getElementById("cv-template");
+                if (cvTemplate) cvTemplate.classList.remove("hidden");
 
-        // Now unhide the template
-        setTimeout(() => {
-            const cvTemplate = document.getElementById("cv-template");
-            if (cvTemplate) {
-                cvTemplate.classList.remove("hidden");
-            }
+                try {
+                    const data = JSON.parse(localStorage.getItem("resumeData")) || {};
 
-            // Populate the CV with data from localStorage
-            try {
-                const data = JSON.parse(localStorage.getItem('resumeData')) || {};
+                    document.getElementById("cv-name").textContent =
+                        `${data.personal?.fname || ""} ${data.personal?.lname || ""}`;
+                    document.getElementById("cv-email").textContent = data.personal?.email || "";
+                    document.getElementById("cv-phone").textContent = data.personal?.phone || "";
+                    document.getElementById("cv-address").textContent = data.personal?.address || "";
+                    document.getElementById("cv-city").textContent = data.personal?.city || "";
+                    document.getElementById("cv-nationality").textContent = data.personal?.nationality || "";
+                    document.getElementById("cv-title").textContent = data.resume || "";
 
-                document.getElementById("cv-name").textContent = `${data.personal?.fname || ''} ${data.personal?.lname || ''}`;
-                document.getElementById("cv-email").textContent = data.personal?.email || '';
-                document.getElementById("cv-phone").textContent = data.personal?.phone || '';
-                document.getElementById("cv-address").textContent = data.personal?.address || '';
-                document.getElementById("cv-city").textContent = data.personal?.city || '';
-                document.getElementById("cv-nationality").textContent = data.personal?.nationality || '';
-                document.getElementById("cv-title").textContent = data.resume || '';
+                    document.getElementById("cv-jobTitle").textContent = data.workExperience?.jobTitle || "";
+                    document.getElementById("cv-employer").textContent = data.workExperience?.employer || "";
+                    document.getElementById("cv-period").textContent =
+                        `${data.workExperience?.startDate || ""} - ${data.workExperience?.endDate || ""}`;
+                    document.getElementById("cv-experience-desc").textContent =
+                        data.workExperience?.description || "";
 
-                document.getElementById("cv-jobTitle").textContent = data.workExperience?.jobTitle || '';
-                document.getElementById("cv-employer").textContent = data.workExperience?.employer || '';
-                document.getElementById("cv-period").textContent = `${data.workExperience?.startDate || ''} - ${data.workExperience?.endDate || ''}`;
-                document.getElementById("cv-experience-desc").textContent = data.workExperience?.description || '';
+                    document.getElementById("cv-degree").textContent = data.education?.degree || "";
+                    document.getElementById("cv-school").textContent = data.education?.school || "";
+                    document.getElementById("cv-edu-period").textContent =
+                        `${data.education?.startDate || ""} - ${data.education?.endDate || ""}`;
+                    document.getElementById("cv-edu-desc").textContent =
+                        data.education?.description || "";
 
-                document.getElementById("cv-degree").textContent = data.education?.degree || '';
-                document.getElementById("cv-school").textContent = data.education?.school || '';
-                document.getElementById("cv-edu-period").textContent = `${data.education?.startDate || ''} - ${data.education?.endDate || ''}`;
-                document.getElementById("cv-edu-desc").textContent = data.education?.description || '';
+                    document.getElementById("cv-interests").textContent = data.interests || "";
+                    document.getElementById("cv-skills").textContent = data.skills || "";
+                } catch (e) {
+                    console.error("Error populating CV:", e);
+                }
 
-                document.getElementById("cv-interests").textContent = data.interests || '';
-                document.getElementById("cv-skills").textContent = data.skills || '';
-            } catch (e) {
-                console.error('Error populating CV:', e);
-            }
+                // ===== FIXED BUTTON PDF HANDLER =====
+                const downloadBtn = document.getElementById("downloadPDF");
 
-            // Attach download handler
-            document.addEventListener("click", (e) => {
-                if (e.target && e.target.id === "downloadPDF") {
-                    async () => {
+                if (downloadBtn) {
+                    // remove old listeners
+                    const newBtn = downloadBtn.cloneNode(true);
+                    downloadBtn.parentNode.replaceChild(newBtn, downloadBtn);
+
+                    newBtn.addEventListener("click", async () => {
                         const { jsPDF } = window.jspdf || {};
                         if (!jsPDF) {
-                            alert('jsPDF library not found. Please include it in your HTML.');
+                            alert("jsPDF library missing");
                             return;
                         }
 
                         const pdf = new jsPDF({
-                            unit: 'pt',
-                            format: 'a4',
-                            orientation: 'portrait'
+                            unit: "pt",
+                            format: "a4",
+                            orientation: "portrait"
                         });
 
-                        // Select the main container to render as PDF
-                        const element = containerEl;
+                        const element = container;
 
                         await pdf.html(element, {
                             margin: 20,
-                            autoPaging: 'text',
+                            autoPaging: "text",
                             html2canvas: { scale: 1, useCORS: true },
-                            callback: (doc) => {
-                                doc.save('My_Resume.pdf');
-                            }
-                        })
-                    }
+                            callback: doc => doc.save("My_Resume.pdf")
+                        });
+                    });
                 }
-            })
+
+                // ======================================
+            }, 10);
         });
-    })
 }
+
 
 
 
