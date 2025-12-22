@@ -146,7 +146,7 @@ No page reload required — everything updates dynamically with JavaScript.
 ---
 
 ## 👨‍💻 Author
-**Your Name Here**  
+**El habib Ridouane**  
 📧 alhabibridouane@gmail.com
 🌐 [LinkedIn](https://linkedin.com/in/RED EL) • [GitHub](https://github.com/redel-byte)
 
